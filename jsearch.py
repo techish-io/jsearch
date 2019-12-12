@@ -110,6 +110,7 @@ if stype == "users" :
         #add ticket data to output dataframe
         users_row_df = add_data(tickets_rows_df, users_row_df, "subject", "ticket")    
 
+        #display results
         display_output(users_row_df)
     else:
         print ("No results found")
@@ -135,6 +136,7 @@ elif stype == "organizations" :
         #add tickets data to output dataframe
         organizations_row_df = add_data(tickets_rows_df, organizations_row_df, "subject", "ticket")
 
+        #display results
         display_output(organizations_row_df)
     else:
         print ("No results found")
@@ -163,6 +165,7 @@ elif stype == "tickets" :
         #add users data to output dataframe
         tickets_rows_df = add_data(users_row_df, tickets_rows_df, "name", "user")
         
+        #display results
         display_output(tickets_rows_df)
         
     else:
