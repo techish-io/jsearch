@@ -27,13 +27,13 @@ if begin == "quit":
 pd.options.mode.chained_assignment = None
 
 ### load json in dataframes
-users_file = "users.json"
+users_file = "jdb/users.json"
 users_df = pd.read_json(users_file, orient='columns')
 
-organizations_file = "organizations.json"
+organizations_file = "jdb/organizations.json"
 organizations_df = pd.read_json(organizations_file, orient='columns')
 
-tickets_file = "tickets.json"
+tickets_file = "jdb/tickets.json"
 tickets_df = pd.read_json(tickets_file, orient='columns')
 
 while(True):
