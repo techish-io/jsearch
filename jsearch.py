@@ -104,7 +104,7 @@ if stype == "users" :
         # add org data to user row
         users_row_df = users_row_df.assign(organizations_name = organizations_name)
 
-        #search ticket data for user
+        #search tickets of this user
         tickets_rows_df = tickets_df.loc[tickets_df["assignee_id"] == int(user_id)]
         
         #add ticket data to output dataframe
@@ -124,13 +124,13 @@ elif stype == "organizations" :
         #get user primary key and org foreign key
         organization_id = int(organizations_row_df["_id"].values[0])
         
-        #search for user row
+        #search for users of this organization
         users_row_df = users_df.loc[users_df['organization_id'] == organization_id]
 
         #add users data to output dataframe
         organizations_row_df = add_data(users_row_df, organizations_row_df, "name", "user")
 
-        #search ticket data for user
+        #search tickets of this organization
         tickets_rows_df = tickets_df.loc[tickets_df["organization_id"] == organization_id]
         
         #add tickets data to output dataframe
@@ -156,11 +156,11 @@ elif stype == "tickets" :
         organizations_row_df = organizations_df.loc[organizations_df["_id"] == organization_id]
         organizations_name = organizations_row_df["name"].values[0]
 
-        # add org data to user row
+        # add org data to user row for this ticket
         tickets_rows_df = tickets_rows_df.assign(organizations_name = organizations_name)
         
-        #search for user row
-        users_row_df = users_df.loc[users_df['organization_id'] == organization_id]
+        #search for user row for this ticket
+        users_row_df = users_df.loc[users_df['_id'] == user_id]
 
         #add users data to output dataframe
         tickets_rows_df = add_data(users_row_df, tickets_rows_df, "name", "user")
