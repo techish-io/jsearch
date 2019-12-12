@@ -3,9 +3,9 @@ import numpy as np
 import sys
 from functions import *
 
-stype = sys.argv[1]
-sid = sys.argv[2]
-svalue = sys.argv[3]
+stype = ""
+sid = ""
+svalue = ""
 
 print (stype)
 print (sid)
@@ -17,12 +17,11 @@ print ("Type 'quit' to exit at any time, Press 'Enter' to continue")
 print (" ")
 print (" ")
 print (" ")
-print ("    Select search options:")
-print ("     • Press 1 to search Zendesk")
-print ("     • Press 2 to view a list of searchable fields")
-print ("     • Type 'quit' to exit")
-print (" ")
-print (" ")
+
+#
+begin = input()
+if begin == "quit":
+    sys.exit()
 
 #global config
 pd.options.mode.chained_assignment = None
@@ -36,6 +35,50 @@ organizations_df = pd.read_json(organizations_file, orient='columns')
 
 tickets_file = "tickets.json"
 tickets_df = pd.read_json(tickets_file, orient='columns')
+
+while(True):
+    print ("    Select search options:")
+    print ("     • Press 1 to search Zendesk")
+    print ("     • Press 2 to view a list of searchable fields")
+    print ("     • Type 'quit' to exit")
+    print (" ")
+    print (" ")
+
+    main_menu = input()
+    if main_menu.strip() == "1":        
+        while(True):
+            print ("Select 1) Users 2) Tickets or 3) Organizations")
+            line = input()
+            if line.strip() == "1":
+                stype = "users" 
+                break
+            elif line.strip() == "2":
+                stype = "tickets" 
+                break
+            elif line.strip() == "1":
+                stype = "organizations"
+                break
+            else:
+                print ("*** Invalid option ***\n")
+
+        while(True):
+            sid = input("Enter search term\n")
+            if sid != "":
+                break
+        
+        while(True):
+            svalue = input("Enter search value\n") 
+            if svalue != "":
+                break        
+        break     
+    elif main_menu.strip() == "2":
+        print ("List of Searchable Fields")
+        break
+    elif main_menu.strip() == "quit":
+        sys.exit()
+    else:
+        continue
+
 
 print ("Searching " + stype + " for " + sid + " with a value of " + svalue)
 if stype == "users" :    
