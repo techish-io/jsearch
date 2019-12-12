@@ -7,7 +7,7 @@ A simple command line application to search the data from multiple json files an
 * Python3
 * pandas
 
-# Setup pip3 and pandas library
+## Setup pip3 and pandas library
 ```
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 python3 get-pip.py --user
