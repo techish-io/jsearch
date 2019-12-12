@@ -90,11 +90,7 @@ while(True):
 
 if stype == "users" :    
     #search for user row
-    try:
-        users_row_df = users_df.loc[users_df[sid] == type_cast(users_df[sid], svalue)]
-    except KeyError:
-        print("Invalid search term.")
-        sys.exit("Exiting...")
+    users_row_df = users_df.loc[users_df[sid] == type_cast(users_df[sid], svalue)]
 
     if users_row_df.size > 0 :        
         #get user primary key and org foreign key
