@@ -14,13 +14,18 @@ python3 get-pip.py --user
 pip3 install pandas
 ```
 
+# Installation
+
+```
+git clone https://github.com/techish1/jsearch
+cd jsearch
+```
+
 # Run
 
 Run following commands and follow the prompts
 
 ```
-git clone https://github.com/techish1/jsearch
-cd jsearch
 python3 jsearch.py
 
 ```
