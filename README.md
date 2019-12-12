@@ -17,8 +17,9 @@ pip3 install pandas
 # Installation
 
 ```
+cd ~
 git clone https://github.com/techish1/jsearch
-cd jsearch
+alias jsearch="python3 ~/jsearch.py"
 ```
 
 # Run
@@ -26,7 +27,10 @@ cd jsearch
 Run following commands and follow the prompts
 
 ```
-python3 jsearch.py
+jsearch
+
+#or run as python
+#python3 jsearch.py
 
 ```
 
