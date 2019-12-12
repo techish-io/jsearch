@@ -1,4 +1,31 @@
 # jsearch
+
+A simple command line application to search the data from multiple json files and return the results in a human readable format.
+
+# Prerequisites
+
+* Python3
+* pandas
+
+# Setup pip3 and pandas library
+```
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python3 get-pip.py --user
+pip3 install pandas
+```
+
+# Run
+
+Run following commands and follow the prompts
+
+```
+git clone https://github.com/techish1/jsearch
+cd jsearch
+python3 jsearch.py
+
+```
+
+# Examples
 ```
 ➜  python3 jsearch.py                    
 
