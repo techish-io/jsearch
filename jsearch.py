@@ -58,10 +58,8 @@ if stype == "users" :
         #search ticket data for user
         tickets_rows_df = tickets_df.loc[tickets_df["assignee_id"] == int(user_id)]
         
-        t=0
-        for index, tickets_row in tickets_rows_df.iterrows():
-            users_row_df["ticket_" + str(t)] = tickets_row['subject']
-            t = t + 1
+        #add ticket data to output dataframe
+        users_row_df = add_data(tickets_rows_df, users_row_df, "subject", "ticket")    
 
         display_output(users_row_df)
     else:
@@ -80,19 +78,14 @@ elif stype == "organizations" :
         #search for user row
         users_row_df = users_df.loc[users_df['organization_id'] == organization_id]
 
-        # add users data to org row
-        u=0
-        for index, users_row in users_row_df.iterrows():
-            organizations_row_df["user_" + str(u)] = users_row['name']
-            u = u + 1
-        
+        #add users data to output dataframe
+        organizations_row_df = add_data(users_row_df, organizations_row_df, "name", "user")
+
         #search ticket data for user
         tickets_rows_df = tickets_df.loc[tickets_df["organization_id"] == organization_id]
         
-        t=0
-        for index, tickets_row in tickets_rows_df.iterrows():
-            organizations_row_df["ticket_" + str(t)] = tickets_row['subject']
-            t = t + 1
+        #add tickets data to output dataframe
+        organizations_row_df = add_data(tickets_rows_df, organizations_row_df, "subject", "ticket")
 
         display_output(organizations_row_df)
     else:
@@ -118,11 +111,8 @@ elif stype == "tickets" :
         #search for user row
         users_row_df = users_df.loc[users_df['organization_id'] == organization_id]
 
-        # add users data to org row
-        u=0
-        for index, users_row in users_row_df.iterrows():
-            tickets_rows_df["user_" + str(u)] = users_row['name']
-            u = u + 1
+        #add users data to output dataframe
+        tickets_rows_df = add_data(users_row_df, tickets_rows_df, "name", "user")
         
         display_output(tickets_rows_df)
         
