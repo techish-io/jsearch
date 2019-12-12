@@ -161,9 +161,10 @@ elif stype == "tickets" :
         
         #search for user row for this ticket
         users_row_df = users_df.loc[users_df['_id'] == user_id]
+        user_name = users_row_df["name"].values[0]
 
         #add users data to output dataframe
-        tickets_rows_df = add_data(users_row_df, tickets_rows_df, "name", "user")
+        tickets_rows_df = tickets_rows_df.assign(user_name = user_name)
         
         #display results
         display_output(tickets_rows_df)
