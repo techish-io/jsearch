@@ -63,13 +63,18 @@ while(True):
 
         while(True):
             sid = input("Enter search term\n")
-            if sid != "":
+            if sid == "":
+                continue
+            elif stype == "users" and sid in users_df.columns:
                 break
+            elif stype == "tickets" and sid in tickets_df.columns:
+                break
+            elif stype == "organizations" and sid in organizations_df.columns:
+                break
+            else:
+                print ("*** Invalid search term ***\n")                   
         
-        while(True):
-            svalue = input("Enter search value\n") 
-            if svalue != "":
-                break        
+        svalue = input("Enter search value\n") 
         
         print ("Searching " + stype + " for " + sid + " with a value of " + svalue)
         break     
@@ -85,8 +90,11 @@ while(True):
 
 if stype == "users" :    
     #search for user row
-    users_df['_id'] = users_df._id.astype(str)
-    users_row_df = users_df.loc[users_df[sid] == svalue]
+    try:
+        users_row_df = users_df.loc[users_df[sid] == type_cast(users_df[sid], svalue)]
+    except KeyError:
+        print("Invalid search term.")
+        sys.exit("Exiting...")
 
     if users_row_df.size > 0 :        
         #get user primary key and org foreign key
@@ -113,8 +121,7 @@ if stype == "users" :
 elif stype == "organizations" :    
     
     #search org data for the user
-    organizations_df['_id'] = organizations_df._id.astype(str)
-    organizations_row_df = organizations_df.loc[organizations_df[sid] == svalue]
+    organizations_row_df = organizations_df.loc[organizations_df[sid] == type_cast(organizations_df[sid], svalue)]
    
     if organizations_row_df.size > 0 :        
         #get user primary key and org foreign key
@@ -137,9 +144,10 @@ elif stype == "organizations" :
         print ("No results found")
 
 elif stype == "tickets" :    
+
     
     #search org data for the user
-    tickets_rows_df = tickets_df.loc[tickets_df[sid] == svalue]
+    tickets_rows_df = tickets_df.loc[tickets_df[sid] == type_cast(tickets_df[sid], svalue)]
    
     if tickets_rows_df.size > 0 :        
         #get user primary key and org foreign key

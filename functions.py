@@ -9,3 +9,13 @@ def add_data(input_df, output_df, input_col, output_col_prefix):
         output_df[output_col_prefix + "_" + str(i)] = input_df_row[input_col]
         i = i + 1
     return output_df    
+
+def type_cast(col, val):
+    if col.dtype == "str" or col.dtype == "object":
+        return str(val)
+    elif col.dtype == "int64" or col.dtype == "int32" or col.dtype == "int":
+        return int(val)
+    elif col.dtype == "float":
+        return float(val)
+    elif col.dtype == "bool":
+        return bool(val)
