@@ -1,58 +1,77 @@
 # jsearch
 ```
-➜  python3 jsearch.py users _id 2                                       
+➜  python3 jsearch.py                    
+
+
+
+Welcome to Zendesk Search
+Type 'quit' to exit at any time, Press 'Enter' to continue
  
-Searching users for _id with a value of 2
-_id                                                                2
-url                   http://initech.zendesk.com/api/v2/users/2.json
-external_id                     c9995ea4-ff72-46e0-ab77-dfe0ae1ef6c2
-name                                                    Cross Barlow
-alias                                                      Miss Joni
-created_at                                2016-06-23T10:31:39 -10:00
-active                                                          True
-verified                                                           1
-shared                                                         False
-locale                                                         zh-CN
-timezone                                                     Armenia
-last_login_at                             2012-04-12T04:03:28 -10:00
-email                                        jonibarlow@flotonic.com
-phone                                                   9575-552-585
-signature                                      Don't Worry Be Happy!
-organization_id                                                  106
-tags                       [Foxworth, Woodlands, Herlong, Henrietta]
-suspended                                                      False
-role                                                           admin
-organizations_name                                         Qualitern
-ticket_0                                    A Catastrophe in Bermuda
-ticket_1                 A Problem in Svalbard and Jan Mayen Islands
-```
-
-```
-➜  python3 jsearch.py organizations _id 101                             
-
-Searching organizations for _id with a value of 101
-_id                                                             101
-url               http://initech.zendesk.com/api/v2/organization...
-external_id                    9270ed79-35eb-4a38-a46f-35725197ea8d
-name                                                        Enthaze
-domain_names       [kage.com, ecratic.com, endipin.com, zentix.com]
-created_at                               2016-05-21T11:10:28 -10:00
-details                                                    MegaCorp
-shared_tickets                                                False
-tags                              [Fulton, West, Rodriguez, Farley]
-user_0                                              Loraine Pittman
-user_1                                               Francis Bailey
-user_2                                                 Haley Farmer
-user_3                                               Herrera Norman
-ticket_0                                        A Drama in Portugal
-ticket_1                                      A Problem in Ethiopia
-ticket_2                      A Problem in Turks and Caicos Islands
-ticket_3                                        A Problem in Guyana
-```
-
-```
-➜  python3 jsearch.py tickets _id "0ebe753c-9c78-458a-817f-3993780bedbf"
  
+ 
+
+    Select search options:
+     • Press 1 to search Zendesk
+     • Press 2 to view a list of searchable fields
+     • Type 'quit' to exit
+ 
+ 
+1
+Select 1) Users 2) Tickets or 3) Organizations
+1
+Enter search term
+_id
+Enter search value
+1
+Searching users for _id with a value of 1
+_id                                                                   1
+url                      http://initech.zendesk.com/api/v2/users/1.json
+external_id                        74341f74-9c79-49d5-9611-87ef9b6eb75f
+name                                                Francisca Rasmussen
+alias                                                       Miss Coffey
+created_at                                   2016-04-15T05:19:46 -10:00
+active                                                             True
+verified                                                              1
+shared                                                            False
+locale                                                            en-AU
+timezone                                                      Sri Lanka
+last_login_at                                2013-08-04T01:03:27 -10:00
+email                                      coffeyrasmussen@flotonic.com
+phone                                                      8335-422-718
+signature                                         Don't Worry Be Happy!
+organization_id                                                     119
+tags                  [Springville, Sutton, Hartsville/Hartley, Diap...
+suspended                                                          True
+role                                                              admin
+organizations_name                                              Multron
+ticket_0                                A Problem in Russian Federation
+ticket_1                                            A Problem in Malawi
+```
+
+```
+➜  python3 jsearch.py
+
+
+
+Welcome to Zendesk Search
+Type 'quit' to exit at any time, Press 'Enter' to continue
+ 
+ 
+ 
+
+    Select search options:
+     • Press 1 to search Zendesk
+     • Press 2 to view a list of searchable fields
+     • Type 'quit' to exit
+ 
+ 
+1
+Select 1) Users 2) Tickets or 3) Organizations
+2
+Enter search term
+_id
+Enter search value
+0ebe753c-9c78-458a-817f-3993780bedbf
 Searching tickets for _id with a value of 0ebe753c-9c78-458a-817f-3993780bedbf
 _id                                0ebe753c-9c78-458a-817f-3993780bedbf
 url                   http://initech.zendesk.com/api/v2/tickets/0ebe...
@@ -73,4 +92,77 @@ via                                                                chat
 organizations_name                                              Limozen
 user_0                                                 Faulkner Holcomb
 user_1                                                       Key Mendez
+```
+
+```
+➜  python3 jsearch.py
+
+
+
+Welcome to Zendesk Search
+Type 'quit' to exit at any time, Press 'Enter' to continue
+ 
+ 
+ 
+
+    Select search options:
+     • Press 1 to search Zendesk
+     • Press 2 to view a list of searchable fields
+     • Type 'quit' to exit
+ 
+ 
+1
+Select 1) Users 2) Tickets or 3) Organizations
+3
+Enter search term
+_id
+Enter search value
+103
+Searching organizations for _id with a value of 103
+_id                                                             103
+url               http://initech.zendesk.com/api/v2/organization...
+external_id                    e73240f3-8ecf-411d-ad0d-80ca8a84053d
+name                                                        Plasmos
+domain_names       [comvex.com, automon.com, verbus.com, gogol.com]
+created_at                               2016-05-28T04:40:37 -10:00
+details                                                  Non profit
+shared_tickets                                                False
+tags                          [Parrish, Lindsay, Armstrong, Vaughn]
+user_0                                              Shelly Clements
+user_1                                                 Adriana Ryan
+user_2                                                Finley Conrad
+ticket_0                                            A Drama in Iraq
+ticket_1                                A Catastrophe in Azerbaijan
+ticket_2                                     A Catastrophe in Palau
+ticket_3                                A Catastrophe in Yugoslavia
+ticket_4                                      A Problem in Malaysia
+ticket_5                                  A Problem in South Africa
+```
+
+```
+➜  python3 jsearch.py
+
+
+
+Welcome to Zendesk Search
+Type 'quit' to exit at any time, Press 'Enter' to continue
+ 
+ 
+ 
+
+    Select search options:
+     • Press 1 to search Zendesk
+     • Press 2 to view a list of searchable fields
+     • Type 'quit' to exit
+ 
+ 
+1
+Select 1) Users 2) Tickets or 3) Organizations
+3
+Enter search term
+_id
+Enter search value
+1
+Searching organizations for _id with a value of 1
+No results found
 ```

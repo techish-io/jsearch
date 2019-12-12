@@ -55,7 +55,7 @@ while(True):
             elif line.strip() == "2":
                 stype = "tickets" 
                 break
-            elif line.strip() == "1":
+            elif line.strip() == "3":
                 stype = "organizations"
                 break
             else:
@@ -70,6 +70,8 @@ while(True):
             svalue = input("Enter search value\n") 
             if svalue != "":
                 break        
+        
+        print ("Searching " + stype + " for " + sid + " with a value of " + svalue)
         break     
     elif main_menu.strip() == "2":
         print ("List of Searchable Fields")
@@ -80,7 +82,7 @@ while(True):
         continue
 
 
-print ("Searching " + stype + " for " + sid + " with a value of " + svalue)
+
 if stype == "users" :    
     #search for user row
     users_df['_id'] = users_df._id.astype(str)
