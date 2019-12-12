@@ -196,3 +196,7 @@ Enter search value
 Searching organizations for _id with a value of 1
 No results found
 ```
+
+# Limitations
+
+* tags search term not supported in this version
