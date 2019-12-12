@@ -6,6 +6,7 @@ A simple command line application to search the data from multiple json files an
 
 * Python3
 * pandas
+* Tested on on linux only
 
 ## Setup pip3 and pandas library
 ```
