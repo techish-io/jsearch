@@ -171,6 +171,12 @@ elif stype == "tickets" :
         
     else:
         print ("No results found")
+else:
+    #print search terms list
+    print_search_terms(users_df, "Users")
+    print_search_terms(tickets_df, "Tickets")
+    print_search_terms(organizations_df, "Organizations") 
+
 
 
 

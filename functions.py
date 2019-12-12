@@ -19,3 +19,9 @@ def type_cast(col, val):
         return float(val)
     elif col.dtype == "bool":
         return bool(val)
+def print_search_terms(df, lable):
+    print ("--------------------------------")
+    print ("Search " +lable+ " with")
+    for col in df.columns: 
+        print(col)
+    print ("")    
