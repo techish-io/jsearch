@@ -11,15 +11,18 @@ settings.read('settings.ini')
 sections_df = {}
 entity_list = settings.sections()
 
-#### load json in dataframes
+#load json in dataframes
 for section in settings.sections():
     src_file = settings.get(section, 'src_file')
-    print ("Loading " + section + " database from " + src_file)
     sections_df[section] = pd.read_json(src_file, orient='columns')
 
-stype = ""
-sid = ""
-svalue = ""
+#global config
+pd.options.mode.chained_assignment = None
+
+#global vars
+search_type = ""  
+search_id = ""    
+search_value = "" 
 
 
 print ("Welcome to Zendesk Search")
@@ -33,8 +36,7 @@ begin = input()
 if begin == "quit":
     sys.exit()
 
-#global config
-pd.options.mode.chained_assignment = None
+
 
 while(True):
     print ("    Select search options:")
@@ -57,26 +59,25 @@ while(True):
             print ( message )
             line = input()
             if int(line.strip()) > 0 and  int(line.strip()) <= len(entity_list):
-                stype = entity_list[int(line.strip()) -1 ]
+                search_type = entity_list[int(line.strip()) -1 ]
                 break
             else:
                 print ("*** Invalid option ***\n")
 
         while(True):
-            sid = input("Enter search term\n")
-            if sid == "":
+            search_id = input("Enter search term\n")
+            if search_id == "":
                 continue
-            elif sid in sections_df[stype].columns:
+            elif search_id in sections_df[search_type].columns:
                 break
             else:
                 print ("*** Invalid search term ***\n")                   
         
-        svalue = input("Enter search value\n") 
+        search_value = input("Enter search value\n") 
         
-        print ("Searching " + stype + " for " + sid + " with a value of " + svalue)
+        print ("Searching " + search_type + " for " + search_id + " with a value of " + search_value)
         break     
     elif main_menu.strip() == "2":
-        print ("List of Searchable Fields")
         break
     elif main_menu.strip() == "quit":
         sys.exit()
@@ -84,24 +85,24 @@ while(True):
         continue
 
 
+#search data from related entities
+if search_type in entity_list:    
 
-if stype in entity_list:    
-
-    input_df = sections_df[stype]
+    input_df = sections_df[search_type]
 
     try:
-        key_id = settings.get(stype, 'key_id')
-        relation_to_list = settings.get(stype, 'relation_to').strip().split(",") if settings.get(stype, 'relation_to').strip() != "" else {}
-        relation_to_id_list = settings.get(stype, 'relation_to_id').strip().split(",") if settings.get(stype, 'relation_to_id').strip() != "" else {}
-        relation_from_list = settings.get(stype, 'relation_from').strip().split(",") if settings.get(stype, 'relation_from').strip() != "" else {}
-        relation_from_id_list = settings.get(stype, 'relation_from_id').strip().split(",") if settings.get(stype, 'relation_from_id').strip() != "" else {}
+        key_id = settings.get(search_type, 'key_id')
+        relation_to_list = settings.get(search_type, 'relation_to').strip().split(",") if settings.get(search_type, 'relation_to').strip() != "" else {}
+        relation_to_id_list = settings.get(search_type, 'relation_to_id').strip().split(",") if settings.get(search_type, 'relation_to_id').strip() != "" else {}
+        relation_from_list = settings.get(search_type, 'relation_from').strip().split(",") if settings.get(search_type, 'relation_from').strip() != "" else {}
+        relation_from_id_list = settings.get(search_type, 'relation_from_id').strip().split(",") if settings.get(search_type, 'relation_from_id').strip() != "" else {}
     except:
         print("Key doesn't exist, please review settings.ini")
         print("Mandatory keys are: key_id, relation_to, relation_to_id, relation_from, relation_from_id")
         sys.exit("Quitting...")
 
     #find record from requested entity
-    input_row_df = input_df.loc[input_df[sid] == type_cast(input_df[sid], svalue)]
+    input_row_df = input_df.loc[input_df[search_id] == type_cast(input_df[search_id], search_value)]
 
     if input_row_df.size > 0 :        
         #get primary key from main search entity
@@ -158,6 +159,7 @@ if stype in entity_list:
 
 else:
     #print search terms list
+    print ("List of Searchable Fields")
     for item in entity_list:
         print_search_terms(sections_df[item], item.title())
 
