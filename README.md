@@ -26,7 +26,7 @@ pip3 install pandas
 | relation_from  | Name of the entity a particular entity(s) is linked from. Comma separated list  |
 | relation_from_id  | Primary key of the entity(s) a particular entity is linked from. Comma separated list  |
 
-### Example
+#### Sample settings.ini file
 ```
 [users]
 src_file: jdb/users.json
