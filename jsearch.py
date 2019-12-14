@@ -122,15 +122,15 @@ if stype in entity_list:
                 #search related data from other entities
                 other_df = sections_df[relation_to]
                 other_id = settings.get(relation_to, 'key_id')
-                other_lable_key = settings.get(relation_to, 'lable_key')
+                other_title_key = settings.get(relation_to, 'title_key')
                 other_row_df = other_df.loc[other_df[other_id] == relation_to_id_val]
-                other_name = other_row_df[other_lable_key].values[0]
+                other_name = other_row_df[other_title_key].values[0]
 
                 #singularize colum name
                 output_col_prefix = relation_to.rstrip('s')
 
                 #add data to output dataframe
-                input_row_df = add_data(other_row_df, input_row_df, other_lable_key, output_col_prefix + "_" + other_lable_key) 
+                input_row_df = add_data(other_row_df, input_row_df, other_title_key, output_col_prefix + "_" + other_title_key) 
 
                 i = i + 1    
 
@@ -143,7 +143,7 @@ if stype in entity_list:
                 relation_from = relation_from_list[i]
                 relation_from_id = relation_from_id_list[i]
                 #search related data from other entities
-                relation_from_lable_key = settings.get(relation_from, 'lable_key')
+                relation_from_title_key = settings.get(relation_from, 'title_key')
                 tickets_df = sections_df[relation_from]
                 tickets_rows_df = tickets_df.loc[tickets_df[relation_from_id] == int(user_id)]                
             
@@ -151,7 +151,7 @@ if stype in entity_list:
                 output_col_prefix = relation_from.rstrip('s')
 
                 #add data to output dataframe
-                input_row_df = add_data(tickets_rows_df, input_row_df, relation_from_lable_key, output_col_prefix)
+                input_row_df = add_data(tickets_rows_df, input_row_df, relation_from_title_key, output_col_prefix)
 
                 i = i + 1    
 

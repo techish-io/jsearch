@@ -20,7 +20,7 @@ pip3 install pandas
 | ------------- | ------------- |
 | src_file  | relative path of source json file e.g.  jdb/users.json |
 | key_id  | Primary key of a particular entity/json file  |
-| lable_key  | Used when when populating data for linked entities  |
+| title_key  | Used when when populating data for linked entities  |
 | relation_to  | Name of the entity(s) a particular entity is linked to. Comma separated list  |
 | relation_to_id  | Primary key of the entity(s) a particular entity is linked to. Comma separated list  |
 | relation_from  | Name of the entity a particular entity(s) is linked from. Comma separated list  |
@@ -31,7 +31,7 @@ pip3 install pandas
 [users]
 src_file: jdb/users.json
 key_id: _id
-lable_key: name
+title_key: name
 relation_to: organizations
 relation_to_id: organization_id
 relation_from: tickets
@@ -40,7 +40,7 @@ relation_from_id: assignee_id
 [tickets]
 src_file: jdb/tickets.json
 key_id: _id
-lable_key: subject
+title_key: subject
 relation_to: organizations,users
 relation_to_id: organization_id,assignee_id
 relation_from: 
@@ -49,7 +49,7 @@ relation_from_id:
 [organizations]
 src_file: jdb/organizations.json
 key_id: _id
-lable_key: name
+title_key: name
 relation_to: 
 relation_to_id: 
 relation_from: users,tickets
