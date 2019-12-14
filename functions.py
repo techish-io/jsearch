@@ -1,10 +1,10 @@
 def display_output(output_rows_df):
     for index, output_row in output_rows_df.head().iterrows():
-        print (output_row.to_string(header=None))
-        print ("")
+        print(output_row.to_string(header=None))
+        print("")
 
 def add_data(input_df, output_df, input_col, output_col_prefix):
-    i=0
+    i = 0
     delimiter = ""
     for index, input_df_row in input_df.iterrows():
         #append _<num> if more than one rows
@@ -23,9 +23,10 @@ def type_cast(col, val):
         return float(val)
     elif col.dtype == "bool":
         return bool(val)
-def print_search_terms(df, lable):
-    print ("--------------------------------")
-    print ("Search " +lable+ " with")
-    for col in df.columns: 
+        
+def print_search_terms(output_df, lable):
+    print("--------------------------------")
+    print("Search " +lable+ " with")
+    for col in output_df.columns: 
         print(col)
-    print ("")    
+    print("")    

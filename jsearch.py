@@ -1,8 +1,7 @@
-import pandas as pd
-import numpy as np
-import sys
-from functions import *
 import configparser
+import sys
+import pandas as pd
+from functions import *
 
 #inital setup
 settings = configparser.ConfigParser()
@@ -25,11 +24,11 @@ search_id = ""
 search_value = "" 
 
 
-print ("Welcome to Zendesk Search")
-print ("Type 'quit' to exit at any time, Press 'Enter' to continue")
-print (" ")
-print (" ")
-print (" ")
+print("Welcome to Zendesk Search")
+print("Type 'quit' to exit at any time, Press 'Enter' to continue")
+print(" ")
+print(" ")
+print(" ")
 
 #
 begin = input()
@@ -37,14 +36,13 @@ if begin == "quit":
     sys.exit()
 
 
-
 while(True):
-    print ("    Select search options:")
-    print ("     • Press 1 to search Zendesk")
-    print ("     • Press 2 to view a list of searchable fields")
-    print ("     • Type 'quit' to exit")
-    print (" ")
-    print (" ")
+    print("    Select search options:")
+    print("     • Press 1 to search Zendesk")
+    print("     • Press 2 to view a list of searchable fields")
+    print("     • Type 'quit' to exit")
+    print(" ")
+    print(" ")
 
     main_menu = input()
     if main_menu.strip() == "1":        
@@ -56,13 +54,13 @@ while(True):
                 message = message + str(entity_list.index(item)+1) + ") " + item.title()
 
             #print instructions for user input
-            print ( message )
+            print(message)
             line = input()
             if int(line.strip()) > 0 and  int(line.strip()) <= len(entity_list):
-                search_type = entity_list[int(line.strip()) -1 ]
+                search_type = entity_list[int(line.strip()) -1]
                 break
             else:
-                print ("*** Invalid option ***\n")
+                print("*** Invalid option ***\n")
 
         while(True):
             search_id = input("Enter search term\n")
@@ -71,11 +69,11 @@ while(True):
             elif search_id in sections_df[search_type].columns:
                 break
             else:
-                print ("*** Invalid search term ***\n")                   
+                print("*** Invalid search term ***\n")                   
         
         search_value = input("Enter search value\n") 
         
-        print ("Searching " + search_type + " for " + search_id + " with a value of " + search_value)
+        print("Searching " + search_type + " for " + search_id + " with a value of " + search_value)
         break     
     elif main_menu.strip() == "2":
         break
@@ -104,13 +102,13 @@ if search_type in entity_list:
     #find record from requested entity
     input_row_df = input_df.loc[input_df[search_id] == type_cast(input_df[search_id], search_value)]
 
-    if input_row_df.size > 0 :        
+    if input_row_df.size > 0:      
         #get primary key from main search entity
         user_id = input_row_df[key_id].values[0]
 
         if len(relation_to_id_list) > 0:
             
-            i=0
+            i = 0
             for relation_to in relation_to_list:
                 relation_to = relation_to_list[i]
                 relation_to_id = relation_to_id_list[i]
@@ -134,9 +132,9 @@ if search_type in entity_list:
         
         if len(relation_from_list) > 0:
 
-            i=0
+            i = 0
             for relation_from in relation_from_list:
-                print ("relation_from " + relation_from)
+                print("relation_from " + relation_from)
                 relation_from = relation_from_list[i]
                 relation_from_id = relation_from_id_list[i]
                 #search related data from other entities
@@ -155,11 +153,11 @@ if search_type in entity_list:
         #display results
         display_output(input_row_df)
     else:
-        print ("No results found")
+        print("No results found")
 
 else:
     #print search terms list
-    print ("List of Searchable Fields")
+    print("List of Searchable Fields")
     for item in entity_list:
         print_search_terms(sections_df[item], item.title())
 
