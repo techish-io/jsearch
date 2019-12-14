@@ -5,8 +5,12 @@ def display_output(output_rows_df):
 
 def add_data(input_df, output_df, input_col, output_col_prefix):
     i=0
+    delimiter = ""
     for index, input_df_row in input_df.iterrows():
-        output_df[output_col_prefix + "_" + str(i)] = input_df_row[input_col]
+        #append _<num> if more than one rows
+        if len(input_df.index) > 1:
+            delimiter = "_" + str(i + 1)
+        output_df[output_col_prefix + delimiter] = input_df_row[input_col]
         i = i + 1
     return output_df    
 
