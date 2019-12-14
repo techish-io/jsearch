@@ -116,17 +116,17 @@ if stype in entity_list:
                 relation_to_id_val = type_cast(input_row_df[relation_to_id], input_row_df[relation_to_id].values[0])
 
                 #search related data from other entities
-                other_df = sections_df[relation_to]
-                other_id = settings.get(relation_to, 'key_id')
-                other_title_key = settings.get(relation_to, 'title_key')
-                other_row_df = other_df.loc[other_df[other_id] == relation_to_id_val]
-                other_name = other_row_df[other_title_key].values[0]
+                related_to_df = sections_df[relation_to]
+                related_to_id = settings.get(relation_to, 'key_id')
+                related_to_title_key = settings.get(relation_to, 'title_key')
+                related_to_row_df = related_to_df.loc[related_to_df[related_to_id] == relation_to_id_val]
+                related_to_name = related_to_row_df[related_to_title_key].values[0]
 
                 #singularize colum name
                 output_col_prefix = relation_to.rstrip('s')
 
                 #add data to output dataframe
-                input_row_df = add_data(other_row_df, input_row_df, other_title_key, output_col_prefix + "_" + other_title_key) 
+                input_row_df = add_data(related_to_row_df, input_row_df, related_to_title_key, output_col_prefix + "_" + related_to_title_key) 
 
                 i = i + 1    
 
@@ -140,14 +140,14 @@ if stype in entity_list:
                 relation_from_id = relation_from_id_list[i]
                 #search related data from other entities
                 relation_from_title_key = settings.get(relation_from, 'title_key')
-                tickets_df = sections_df[relation_from]
-                tickets_rows_df = tickets_df.loc[tickets_df[relation_from_id] == int(user_id)]                
+                related_from_df = sections_df[relation_from]
+                related_from_rows_df = related_from_df.loc[related_from_df[relation_from_id] == int(user_id)]                
             
                 #singularize colum name
                 output_col_prefix = relation_from.rstrip('s')
 
                 #add data to output dataframe
-                input_row_df = add_data(tickets_rows_df, input_row_df, relation_from_title_key, output_col_prefix)
+                input_row_df = add_data(related_from_rows_df, input_row_df, relation_from_title_key, output_col_prefix)
 
                 i = i + 1    
 
