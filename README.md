@@ -238,6 +238,24 @@ Searching organizations for _id with a value of 1
 No results found
 ```
 
+# Extensibility
+
+* Utility is configurable through settings.ini
+* settings.ini makes this utility exendible
+* Main interactive menue is created with the entities/sections data from settings.ini
+* More entities (json files) can be added for search without modifying a single line of code, only by adding config into settings.ini
+
+# Performance
+
+* Utility gracefully handles a significant increase in amount of data
+
+# Robustness
+
+* Utility handles errors where possible
+* Input data is validated
+* Search terms are validated
+* Incorrect input is handled gracefully
+
 # Limitations
 
 * tags search term not supported in this version
