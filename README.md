@@ -14,7 +14,7 @@ curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 python3 get-pip.py --user
 pip3 install pandas
 ```
-## Setup pip3 and pandas library
+## settings.ini
 
 | [Entity]  | Name of the Entity/Section e.g. Users |
 | ------------- | ------------- |
@@ -26,6 +26,7 @@ pip3 install pandas
 | relation_from  | Name of the entity a particular entity(s) is linked from. Comma separated list  |
 | relation_from_id  | Primary key of the entity(s) a particular entity is linked from. Comma separated list  |
 
+### Example
 ```
 [users]
 src_file: jdb/users.json
