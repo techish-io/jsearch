@@ -107,8 +107,6 @@ if stype in entity_list:
         #get primary key from main search entity
         user_id = input_row_df[key_id].values[0]
 
-        print (user_id)
-
         if len(relation_to_id_list) > 0:
             
             i=0
@@ -116,8 +114,6 @@ if stype in entity_list:
                 relation_to = relation_to_list[i]
                 relation_to_id = relation_to_id_list[i]
                 relation_to_id_val = type_cast(input_row_df[relation_to_id], input_row_df[relation_to_id].values[0])
-
-                print (relation_to_id_val)
 
                 #search related data from other entities
                 other_df = sections_df[relation_to]
