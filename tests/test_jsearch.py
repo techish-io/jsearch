@@ -1,12 +1,5 @@
-import os
-import sys
-import unittest
 from unittest import TestCase
-from unittest.mock import create_autospec
-
-import pandas as pd
 from mock import patch
-
 import jsearch as mymodule
 
 
