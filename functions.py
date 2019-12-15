@@ -16,7 +16,9 @@ def add_data(input_df, output_df, input_col, output_col_prefix):
     return output_df    
 
 def type_cast(col, val):
-    if col.dtype == "str" or col.dtype == "object":
+    if val.strip() == "":
+        return val.strip()
+    elif col.dtype == "str" or col.dtype == "object":
         return str(val)
     elif col.dtype == "int64" or col.dtype == "int32" or col.dtype == "int":
         return int(val)
