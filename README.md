@@ -4,6 +4,7 @@ A simple command line application to search the data from multiple json files an
 
 # Prerequisites
 
+* Git
 * Python3
 * pandas (python module)
 * mock (python module)
