@@ -1,10 +1,13 @@
 import configparser
 import sys
+import warnings
 import pandas as pd
 from functions import *
 
 #global config
 pd.options.mode.chained_assignment = None
+#FutureWarning is suppressed
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 #global vars
 search_type = ""  
