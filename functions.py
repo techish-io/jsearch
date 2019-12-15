@@ -20,13 +20,15 @@ def type_cast(col, val):
         return val.strip()
     elif col.dtype == "str" or col.dtype == "object":
         return str(val)
-    elif col.dtype == "int64" or col.dtype == "int32" or col.dtype == "int":
+    elif (col.dtype == "int64" or col.dtype == "int32" or col.dtype == "int") and val.isdigit():
         return int(val)
     elif col.dtype == "float":
         return float(val)
     elif col.dtype == "bool":
         return bool(val)
-        
+    else:    
+        return val
+
 def print_search_terms(output_df, lable):
     print("--------------------------------")
     print("Search " +lable+ " with")
