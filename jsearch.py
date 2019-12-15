@@ -134,7 +134,6 @@ if search_type in entity_list:
 
             i = 0
             for relation_from in relation_from_list:
-                print("relation_from " + relation_from)
                 relation_from = relation_from_list[i]
                 relation_from_id = relation_from_id_list[i]
                 #search related data from other entities
