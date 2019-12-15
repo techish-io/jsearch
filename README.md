@@ -77,8 +77,6 @@ cd jsearch
 # install python module dependencies
 pip3 install -r requirements.txt --user
 
-```
-```
 #run utility
 python3 jsearch.py
 ```
