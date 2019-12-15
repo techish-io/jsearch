@@ -1,4 +1,4 @@
-# jsearch
+# jsearch [![Build Status](https://travis-ci.com/techish1/jsearch.svg?branch=master)](https://travis-ci.com/techish1/jsearch)
 
 A simple command line application to search the data from multiple json files and return the results in a human readable format.
 
