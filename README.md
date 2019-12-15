@@ -397,7 +397,7 @@ OK
 
 # Improvements
 
-* Package jsearch application as commandline utility
+* Package jsearch application as commandline utility in next version
 
 # Contact
 
