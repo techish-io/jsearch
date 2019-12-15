@@ -256,6 +256,17 @@ No results found
 * Search terms are validated
 * Incorrect input is handled gracefully
 
+# Testing
+
+```
+➜  python3 -m unittest discover tests
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.007s
+
+OK
+```
+
 # Limitations
 
 * tags search term not supported in this version
