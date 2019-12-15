@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+
+
+"""jsearch: provides entry point main()."""
+
+
+__version__ = "0.1.0"
+
+
 import configparser
 import sys
 import warnings

@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+
+
+"""functions: module within the jsearch package."""
+
 def display_output(output_rows_df):
     for index, output_row in output_rows_df.head().iterrows():
         print("---------------------------------------------------------------------")
