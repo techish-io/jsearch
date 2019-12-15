@@ -9,6 +9,9 @@ A simple command line application to search the data from multiple json files an
 * mock (python module)
 * Tested on on Linux and OS X only
 
+## Install Python3
+[Follow instruction on this page to install python3](https://docs.python-guide.org/starting/install3/linux/)
+
 ## Setup pip3
 Install pip3 if doesn't exist already
 ```
