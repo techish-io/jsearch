@@ -18,14 +18,14 @@ class TestType_Cast(unittest.TestCase):
         """
         Test the type cast of dataframe colum of type int
         """
-        result = myfunc.type_cast(pd.DataFrame([['tom', 10, 21.0, True]], columns = ['Name', 'Age', 'Points', 'Active'])['Age'], 10)
+        result = myfunc.type_cast(pd.DataFrame([['tom', 10, 21.0, True]], columns = ['Name', 'Age', 'Points', 'Active'])['Age'], "10")
         self.assertEqual(result, 10)
 
     def test_type_cast_float(self):
         """
         Test the type cast of dataframe colum of type float
         """
-        result = myfunc.type_cast(pd.DataFrame([['tom', 10, 21.0, True]], columns = ['Name', 'Age', 'Points', 'Active'])['Points'],21.0)
+        result = myfunc.type_cast(pd.DataFrame([['tom', 10, 21.0, True]], columns = ['Name', 'Age', 'Points', 'Active'])['Points'],"21.0")
         self.assertEqual(result, 21.0)
     
     def test_type_cast_bool(self):
