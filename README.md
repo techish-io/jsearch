@@ -7,7 +7,7 @@ A simple command line application to search the data from multiple json files an
 * Python3
 * pandas (python module)
 * mock (python module)
-* Tested on on linux only
+* Tested on on Linux and OS X only
 
 ## Setup pip3 and pandas library
 ```
