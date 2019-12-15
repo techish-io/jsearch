@@ -2,7 +2,6 @@ import configparser
 import sys
 import pandas as pd
 from functions import *
-from tabulate import tabulate
 
 #global config
 pd.options.mode.chained_assignment = None

@@ -68,6 +68,8 @@ cd ~
 git clone https://github.com/techish1/jsearch
 cd jsearch
 
+pip3 install -r requirements.txt
+
 python3 jsearch.py
 ```
 
