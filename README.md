@@ -4,19 +4,25 @@ A simple command line application to search the data from multiple json files an
 
 # Prerequisites
 
+* Git
 * Python3
 * pandas (python module)
 * mock (python module)
 * Tested on on Linux and OS X only
 
-## Setup pip3 and pandas library
+## Install Python3
+[Follow instruction on this page to install python3](https://docs.python-guide.org/starting/install3/linux/)
+
+## Setup pip3
+Install pip3 if doesn't exist already
 ```
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 python3 get-pip.py --user
-pip3 install pandas
-pip3 install mock
 ```
 ## settings.ini
+
+* settings.ini comes as part of git repository, no need to set it up again.
+* You can skip this step and go direct to "Installation and Usage"
 
 | [Entity]  | Name of the Entity/Section e.g. Users |
 | ------------- | ------------- |
@@ -68,8 +74,10 @@ cd ~
 git clone https://github.com/techish1/jsearch
 cd jsearch
 
-pip3 install -r requirements.txt
+# install python module dependencies
+pip3 install -r requirements.txt --user
 
+#run utility
 python3 jsearch.py
 ```
 
