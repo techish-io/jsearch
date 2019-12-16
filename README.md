@@ -83,7 +83,7 @@ python3 -m jsearch
 
 # Examples
 ```
-➜  python3 jsearch.py                    
+➜  python3 -m jsearch                    
 
 
 
