@@ -114,7 +114,7 @@ name                                                Francisca Rasmussen
 ```
 
 ```
-➜  python3 jsearch.py
+➜  python3 -m jsearch
 
 
 
@@ -146,7 +146,7 @@ user_1                                                       Key Mendez
 ```
 
 ```
-➜  python3 jsearch.py
+➜  python3 -m jsearch
 
 
 
@@ -181,7 +181,7 @@ ticket_0                                            A Drama in Iraq
 ```
 
 ```
-➜  python3 jsearch.py
+➜  python3 -m jsearch
 
 
 
