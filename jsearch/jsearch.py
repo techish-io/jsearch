@@ -86,7 +86,7 @@ def ask_user():
                 #print instructions for user input
                 print(message)
                 line = input()
-                if line.strip() != "" and int(line.strip()) > 0 and  int(line.strip()) <= len(entity_list):
+                if line.strip() != "" and (line.isdigit() and int(line.strip()) ) > 0 and  int(line.strip()) <= len(entity_list):
                     search_type = entity_list[int(line.strip()) -1]
                     break
                 else:
