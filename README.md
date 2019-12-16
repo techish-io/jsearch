@@ -394,6 +394,8 @@ OK
 
 * tags and domains (complex data type) search term not supported in this version
 * date search term is supported for equal operator only, less or greater than operators not supported
+* Need to ship data files with module
+* Need to update install instructions to run utility as module 
 
 # Package as module
 
