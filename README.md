@@ -77,8 +77,8 @@ cd jsearch
 # install python module dependencies
 pip3 install -r requirements.txt --user
 
-#run utility
-python3 jsearch.py
+#run module
+python3 -m jsearch
 ```
 
 # Examples
@@ -395,9 +395,11 @@ OK
 * tags and domains (complex data type) search term not supported in this version
 * date search term is supported for equal operator only, less or greater than operators not supported
 
-# Improvements
+# Package as module
 
-* Package jsearch application as commandline utility in next version
+```
+python3 setup.py install --user
+```
 
 # Contact
 
