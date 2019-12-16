@@ -397,9 +397,19 @@ OK
 
 # Package as module
 
+* Install as root
+
+```
+python3 setup.py install
+```
+
+* Install as non-root user
+
 ```
 python3 setup.py install --user
 ```
+
+* More details to come
 
 # Contact
 
