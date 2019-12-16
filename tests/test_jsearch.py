@@ -1,6 +1,6 @@
 from unittest import TestCase
 from mock import patch
-import jsearch as mymodule
+import jsearch.jsearch as mymodule
 
 
 class TestAskUser(TestCase):

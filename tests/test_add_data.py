@@ -1,4 +1,4 @@
-import functions as myfunc
+import jsearch.functions as myfunc
 import pandas as pd
 import unittest
 

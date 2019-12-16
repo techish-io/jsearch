@@ -1,8 +1,17 @@
+# -*- coding: utf-8 -*-
+
+
+"""jsearch.jsearch: provides entry point main()."""
+
+
+__version__ = "0.1.1"
+
+
 import configparser
 import sys
 import warnings
 import pandas as pd
-from functions import *
+from .functions import *
 
 #global config
 pd.options.mode.chained_assignment = None
@@ -77,7 +86,7 @@ def ask_user():
                 #print instructions for user input
                 print(message)
                 line = input()
-                if line.strip() != "" and int(line.strip()) > 0 and  int(line.strip()) <= len(entity_list):
+                if line.strip() != "" and (line.isdigit() and int(line.strip()) ) > 0 and  int(line.strip()) <= len(entity_list):
                     search_type = entity_list[int(line.strip()) -1]
                     break
                 else:
