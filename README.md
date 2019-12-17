@@ -1,5 +1,6 @@
 # jsearch [![Build Status](https://travis-ci.com/techish1/jsearch.svg?branch=master)](https://travis-ci.com/techish1/jsearch) 
-https://codebuild.ap-southeast-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZzJTZmludEt4OVBTK3lkWGNTNG03MU9jZlJaNzA2dTJvTmkxcURoQmJ4aVBhOVdHakdXTmpkREFzbzNWWnZIQTg0NmVWYlZWdVoyM3BSbnRTVTBRNTNjPSIsIml2UGFyYW1ldGVyU3BlYyI6IlZaeGtnOU0wK1QrNnFDZFQiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master
+
+[![status](https://codebuild.ap-southeast-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZzJTZmludEt4OVBTK3lkWGNTNG03MU9jZlJaNzA2dTJvTmkxcURoQmJ4aVBhOVdHakdXTmpkREFzbzNWWnZIQTg0NmVWYlZWdVoyM3BSbnRTVTBRNTNjPSIsIml2UGFyYW1ldGVyU3BlYyI6IlZaeGtnOU0wK1QrNnFDZFQiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://codebuild.ap-southeast-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZzJTZmludEt4OVBTK3lkWGNTNG03MU9jZlJaNzA2dTJvTmkxcURoQmJ4aVBhOVdHakdXTmpkREFzbzNWWnZIQTg0NmVWYlZWdVoyM3BSbnRTVTBRNTNjPSIsIml2UGFyYW1ldGVyU3BlYyI6IlZaeGtnOU0wK1QrNnFDZFQiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 A simple command line application to search the data from multiple json files and return the results in a human readable format.
 
