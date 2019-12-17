@@ -17,6 +17,5 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - jsearch
-  base-directory: /usr/local/bin
+    - '**/*'
   name: jsearch-module      
