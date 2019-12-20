@@ -4,7 +4,7 @@
 """jsearch.jsearch: provides entry point main()."""
 
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 import configparser
@@ -44,6 +44,7 @@ def load():
         src_file = settings.get(section, 'src_file')
         sections_df[section] = pd.read_json(src_file, orient='columns')
 
+    print("Welcome to Zendesk Search")
 
 
 
@@ -53,7 +54,7 @@ def ask_user():
     global search_id
     global search_value
     
-    print("Welcome to Zendesk Search")
+    print(" ")
     print("Type 'quit' to exit at any time, Press 'Enter' to continue")
     print(" ")
     print(" ")
@@ -67,6 +68,7 @@ def ask_user():
 
 
     while(True):
+        print(" ")
         print("    Select search options:")
         print("     • Press 1 to search Zendesk")
         print("     • Press 2 to view a list of searchable fields")
@@ -115,6 +117,9 @@ def ask_user():
 
 #search function of the module
 def search():
+    #get user input
+    ask_user()
+
     #search data from related entities
     if search_type in entity_list:    
 
@@ -183,8 +188,14 @@ def search():
 
             #display results
             display_output(input_row_df)
+
+            #search again
+            search()
         else:
             print("No results found")
+
+            #search again
+            search()
 
     else:
         #print search terms list
@@ -192,11 +203,13 @@ def search():
         for item in entity_list:
             print_search_terms(sections_df[item], item.title())
 
+        #search again
+        search()    
+
 
 #main function of search module
 def main():
     load()
-    ask_user()
     search()
 
 if __name__ == '__main__':
